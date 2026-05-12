@@ -1,8 +1,11 @@
 name: Daily News Update
 on:
   schedule:
-    - cron: '0 0,8,16 * * *' # 每天台灣時間 08:00, 16:00, 00:00 自動更新
-  workflow_dispatch: # 也可以手動觸發
+    - cron: '0 0,8,16 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write  # 👈 新增這兩行，允許程式寫入檔案
 
 jobs:
   build:
